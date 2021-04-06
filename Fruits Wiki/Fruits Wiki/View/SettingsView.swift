@@ -10,6 +10,7 @@ import SwiftUI
 struct SettingsView: View {
     // MARK: - PROPERTIES
     @Environment(\.presentationMode) var presentationMode
+    @AppStorage("isOnboarding") var isOnboarding: Bool = false
     
     // MARK: - BODY
     var body: some View {
@@ -32,8 +33,43 @@ struct SettingsView: View {
                     
                     // MARK: - SECTION 2
                     
-                    // MARK: - SECTION 3
+                    GroupBox(label: SettingsLabelView(labelText: "Customization", labelImage: "paintbrush")) {
+                        Divider().padding(.vertical, 4)
+                        
+                        Text("if you wish, you can restart the application by toggle the switch in this box. That way it starts the onboarding process and you will see the welcome screen again.")
+                            .padding(.vertical, 8)
+                            .frame(minHeight: 60)
+                            .layoutPriority(1)
+                            .font(.footnote)
+                            .multilineTextAlignment(.leading)
+                        
+                        Toggle(isOn: $isOnboarding) {
+                            if isOnboarding {
+                                Text("Restarted".uppercased())
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.green)
+                            } else {
+                                Text("Restart".uppercased())
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.secondary)
+                            }
+                        } //: TOGGLE
+                        .padding()
+                        .background(
+                            Color(UIColor.tertiarySystemBackground)
+                                .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
+                        )
+                    } //: GROUP-BOX
                     
+                    // MARK: - SECTION 3
+                    GroupBox(label: SettingsLabelView(labelText: "Application", labelImage: "apps.iphone")) {
+                        
+                        SettingsRowView(name: "Developer", content: "Loi Pham")
+                        SettingsRowView(name: "Designer", content: "Robert Petras")
+                        SettingsRowView(name: "Source code", linkLabel: "Github", linkDestination: "github.com/loitpham/Fruits-Wiki")
+                        SettingsRowView(name: "SwiftUI", content: "2.0")
+                        SettingsRowView(name: "Version", content: "1.0")
+                    } //: GROUP-BOX
                     
                 } //: VSTACK
                 .navigationBarTitle(Text("Settings"), displayMode: .large)

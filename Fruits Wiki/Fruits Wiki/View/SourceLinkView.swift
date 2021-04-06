@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SourceLinkView: View {
     // MARK: - PROPERTIES
-    
+    var searchTerm: String
     
     // MARK: - BODY
     
@@ -18,7 +18,7 @@ struct SourceLinkView: View {
             HStack {
                 Text("Content source")
                 Spacer()
-                Link("Wikipedia", destination: URL(string: "https://wikipedia.com")!)
+                Link("Wikipedia", destination: URL(string: "https://en.wikipedia.org/wiki/\(searchTerm)")!)
                 Image(systemName: "arrow.up.right.square")
             } //: HSTACK
             .font(.footnote)
@@ -30,7 +30,7 @@ struct SourceLinkView: View {
 
 struct SourceLinkView_Previews: PreviewProvider {
     static var previews: some View {
-        SourceLinkView()
+        SourceLinkView(searchTerm: "blueberry")
             .previewLayout(.sizeThatFits)
             .padding()
     }

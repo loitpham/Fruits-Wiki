@@ -45,7 +45,7 @@ struct FruitDetailView: View {
                             .multilineTextAlignment(.leading)
                         
                         // LINK
-                        SourceLinkView()
+                        SourceLinkView(searchTerm: fruit.title)
                             .padding(.top, 10)
                             .padding(.bottom, 40)
                         
@@ -58,6 +58,7 @@ struct FruitDetailView: View {
             } //: SCROLLVIEW
             .edgesIgnoringSafeArea(.top)
         } //: NAVIGATION
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
