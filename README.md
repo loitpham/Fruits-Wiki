@@ -1,9 +1,9 @@
 A simple iOS app using SwiftUI that shows information about fruits in Card View and List View.
 
-![Onboarding View](Screenshots/Onboarding-View.png =100x200)
+<img src="Screenshots/Onboarding-View.png" alt="Onboarding View" width="100" height="200" />
 
-![Fruits List View](Screenshots/Fruits-List-View.png =100x200)
+<img src="Screenshots/Fruits-List-View.png" alt="Fruits List View" width="100" height="200" />
 
-![Detail View](Screenshots/Detail-View.png =100x200)
+<img src="Screenshots/Detail-View.png" alt="Detail View" width="100" height="200" />
 
-![Nutritional Dropdown View](Screenshots/Nutritional-Dropdown-View.png =100x200)
+<img src="Screenshots/Nutritional-Dropdown-View.png" alt="Nutritional Dropdown View" width="100" height="200" />
