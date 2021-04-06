@@ -18,7 +18,7 @@ struct StartButtonView: View {
             isOnboarding = false
         }, label: {
             HStack(spacing: 8) {
-                Text("Start")
+                Text("Getting Started")
                 
                 Image(systemName: "arrow.right.circle")
                     .imageScale(.large)
