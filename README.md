@@ -1,0 +1,1 @@
+A simple iOS app using SwiftUI that shows information about fruits in Card View and List View.
